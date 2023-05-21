@@ -1,4 +1,5 @@
 import { useReducer } from "react"
+import { useEffect } from "react"
 import DigitButton from "./DigitButton"
 import OperationButton from "./OperationButton"
 import "./App.css"
@@ -135,7 +136,39 @@ function App() {
     reducer,
     {}
   )
+    
+  useEffect(() => {
+    function handleKeyPress(event) {
+      const key = event.key;
+    
+      if (/^\d$/.test(key)) {
+        dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: key } });
+      } else if (key ===".") {
+        dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: key } });
+      } else if (key === "Backspace") {
+        dispatch({ type: ACTIONS.DELETE_DIGIT });
+      } else if (key === "Delete") {
+        dispatch({ type: ACTIONS.CLEAR });
+      } else if (key === "/") {
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
+      } else if (key === "*") {
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
+      } else if (key === "+") {
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
+      } else if (key === "-") {
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
+      } else if (key === "Enter") {
+        dispatch({ type: ACTIONS.EVALUATE});
+      }
+    }
+    
 
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
   return (
     <div className="grid place-items-center h-screen">
     <div className="calculator-grid">
