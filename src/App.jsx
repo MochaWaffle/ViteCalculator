@@ -147,17 +147,17 @@ function App() {
         dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: key } });
       } else if (key === "Backspace") {
         dispatch({ type: ACTIONS.DELETE_DIGIT });
-      } else if (key === "Delete") {
+      } else if (key === "Delete" && event.code === "Delete") {
         dispatch({ type: ACTIONS.CLEAR });
-      } else if (key === "/") {
-        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
+      } else if (key === "/" || key === "\\") {
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: "÷" } });
       } else if (key === "*") {
         dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
       } else if (key === "+") {
         dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
       } else if (key === "-") {
         dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
-      } else if (key === "Enter") {
+      } else if (key === "Enter" && event.code === "Enter") {
         dispatch({ type: ACTIONS.EVALUATE});
       }
     }
