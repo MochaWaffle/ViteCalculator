@@ -22,13 +22,20 @@ function reducer(state, { type, payload }) {
           overwrite: false,
         }
       }
+      if ( (state.currentOperand === undefined || state.currentOperand === null) && payload.digit === ".")
+      {
+        return {
+          ...state,
+          currentOperand: `${0}${payload.digit}`,
+        }
+      }
       if (payload.digit === "0" && state.currentOperand === "0") {
         return state
       }
       if (payload.digit === "." && state.currentOperand.includes(".")) {
         return state
       }
-
+      
       return {
         ...state,
         currentOperand: `${state.currentOperand || ""}${payload.digit}`,
@@ -101,6 +108,8 @@ function reducer(state, { type, payload }) {
 function evaluate({ currentOperand, previousOperand, operation }) {
   const prev = parseFloat(previousOperand)
   const current = parseFloat(currentOperand)
+  console.log("prev: ", prev)
+  console.log("current: ", current)
   if (isNaN(prev) || isNaN(current)) return ""
   let computation = ""
   switch (operation) {
@@ -114,7 +123,15 @@ function evaluate({ currentOperand, previousOperand, operation }) {
       computation = prev * current
       break
     case "÷":
-      computation = prev / current
+      if (current === 0 || current === 0.1)
+      {
+        alert("You can't divide by zero and 0.")
+        computation = 0
+      }
+      else {
+        computation = prev / current
+      }
+      
       break
   }
 
@@ -157,7 +174,7 @@ function App() {
         dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
       } else if (key === "-") {
         dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: key } });
-      } else if (key === "Enter" && event.code === "Enter") {
+      } else if (key === "Enter" && event.code === "Enter" || key === "=") {
         dispatch({ type: ACTIONS.EVALUATE});
       }
     }
