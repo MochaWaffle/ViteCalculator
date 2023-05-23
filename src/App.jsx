@@ -108,8 +108,7 @@ function reducer(state, { type, payload }) {
 function evaluate({ currentOperand, previousOperand, operation }) {
   const prev = parseFloat(previousOperand)
   const current = parseFloat(currentOperand)
-  console.log("prev: ", prev)
-  console.log("current: ", current)
+
   if (isNaN(prev) || isNaN(current)) return ""
   let computation = ""
   switch (operation) {
