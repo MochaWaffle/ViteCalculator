@@ -4,13 +4,21 @@ I tweaked some fetures such as fixing the bug where the calculator would dissape
 do calculations such as adding numbers, subtracting, etc. 
 
 Key Press Binds:
+
 Enter: "Enter"/"="
+
 Add: "+"
+
 Subtract:"-"
+
 Multiply: *
+
 Divide: "/" or "\"
+
 Dot: "."
+
 Clear: "Delete:
+
 Delete (single digits): "Backspace"
 
 Note: If you click on add, subtract, multiply, divide, clear, or delete and still have your mouse hovered over the button you clicked on and then you try to do calculations through key presses, you will
