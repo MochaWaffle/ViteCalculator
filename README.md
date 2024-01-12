@@ -1,25 +1,33 @@
 # ViteCalculator
-Most of the code is from Web Dev Simplified React Calculator video: https://www.youtube.com/watch?v=DgRrrOt0Vr8. 
-I tweaked some fetures such as fixing the bug where the calculator would dissapear when you press dot when the calculator is empty, changed the design of the calculator, made it responsive, and made key presses 
-do calculations such as adding numbers, subtracting, etc. 
 
-Key Press Binds:
+## 💡 About 💡
+- A beautiful-looking and responsive designed calculator website made in Vite React.
 
-Enter: "Enter"/"="
+## ⌨️ Key Press Binds ⌨️
 
-Add: "+"
+- Enter: "Enter"/"="
 
-Subtract:"-"
+- Add: "+"
 
-Multiply: *
+- Subtract:"-"
 
-Divide: "/" or "\"
+- Multiply: *
 
-Dot: "."
+- Divide: "/" or "\"
 
-Clear: "Delete:
+- Dot: "."
 
-Delete (single digits): "Backspace"
+- Clear: "Delete:
 
-Note: If you click on add, subtract, multiply, divide, clear, or delete and still have your mouse hovered over the button you clicked on and then you try to do calculations through key presses, you will
-get an incorrect output. To fix this, after you click those buttons, click on anywhere on the screen that is not the buttons.
+- Delete (single digits): "Backspace"
+
+> [!NOTE]
+> If you click on add, subtract, multiply, divide, clear, or delete and still have your mouse hovered over the button you clicked on, and then you try to do calculations through key presses, you will get an incorrect output. To fix this, after you click those buttons, click on anywhere on the screen that is not the buttons.
+
+## 🔗 Visit 🔗
+- https://mochawaffle-vite-calculator.netlify.app/
+
+## 📰 CREDIT 📰
+- Most of the code is from the Web Dev Simplified React Calculator video: https://www.youtube.com/watch?v=DgRrrOt0Vr8.
+> [!NOTE] 
+> I tweaked some features, such as fixing the bug where the calculator would disappear when you press a dot when the calculator is empty, changed the calculator's design, made it responsive, and made key presses do calculations such as adding numbers, subtracting, etc. 
